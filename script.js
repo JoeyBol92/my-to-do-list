@@ -23,7 +23,7 @@ document
 
     // Create a list item
     const ListItem = document.createElement("li");
-    ListItem.innerHTML = `<input type="checkbox" /> ${todoInputData} <button id="deleteTodoItem">X</button>`;
+    ListItem.innerHTML = `<input type="checkbox" /> <span>${todoInputData}</span> <button class="deleteTodoItem">X</button>`;
     console.log(ListItem);
 
     // Add todo item to the list
@@ -33,22 +33,24 @@ document
     document.querySelector("#todo-input").value = "";
 
     // Mark todo item as done
-    document
-      .querySelector("input[type=checkbox]")
-      .addEventListener("change", function () {
+    ListItem.querySelector("input[type=checkbox]").addEventListener(
+      "change",
+      function () {
         if (this.checked) {
           ListItem.classList.add("done");
         } else {
           ListItem.classList.remove("done");
         }
-      });
+      }
+    );
 
     // Remove todo item from the list
-    document
-      .querySelector("#deleteTodoItem")
-      .addEventListener("click", function () {
+    ListItem.querySelector(".deleteTodoItem").addEventListener(
+      "click",
+      function () {
         document.querySelector(".todo-list").removeChild(ListItem);
-      });
+      }
+    );
 
     // Clear all todo items
     document.querySelector("#clearAll").addEventListener("click", function () {
