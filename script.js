@@ -1,3 +1,4 @@
+// Empty array to store todo items
 let todoList = [];
 
 // Function to access input field
