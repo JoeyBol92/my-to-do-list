@@ -23,7 +23,7 @@ document
 
     // Create a list item
     const ListItem = document.createElement("li");
-    ListItem.innerHTML = `<input type="checkbox" /> <span>${todoInputData}</span> <button class="deleteTodoItem">X</button>`;
+    ListItem.innerHTML = `<input type="checkbox" class="checkTodoItem"/> <span>${todoInputData}</span> <button class="deleteTodoItem">X</button>`;
     console.log(ListItem);
 
     // Add todo item to the list
