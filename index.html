@@ -19,8 +19,15 @@
     <main>
       <div class="todo-form">
         <form>
-          <input type="text" placeholder="Add a new task" id="todo-input" />
-          <button type="submit" id="addTodoItem">Add</button>
+          <div>
+            <input type="text" placeholder="Add a new task" id="todo-input" />
+            <input type="text" placeholder="Add a label" id="label-input" />
+            <label for="favcolor">Label color:</label>
+            <input type="color" id="color-input" value="#19D28B" />
+          </div>
+          <div>
+            <button type="submit" id="addTodoItem">Add</button>
+          </div>
         </form>
         <ul class="todo-list"></ul>
       </div>

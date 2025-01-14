@@ -1,9 +1,5 @@
 // Empty array to store todo items
-let todoList = [];
-
-// Function to access input field
-const todoInput = document.querySelector("#todo-input").value;
-console.log(todoInput);
+// let todoList = [];
 
 // Listining to the click event
 document
@@ -19,12 +15,23 @@ document
       return;
     }
     console.log(todoInputData);
-    todoList.push(todoInputData);
-    console.log(todoList);
+    // todoList.push(todoInputData);
+    // console.log(todoList);
+
+    // Get data from label field
+    const todoLabelData = document.querySelector("#label-input").value.trim();
+    if (todoLabelData === "") {
+      alert("Please enter a label");
+      return;
+    }
+    console.log(todoLabelData);
+
+    // Get data from color picker field
+    const labelColor = document.querySelector("#color-input").value;
 
     // Create a list item
     const ListItem = document.createElement("li");
-    ListItem.innerHTML = `<input type="checkbox" class="checkTodoItem"/> <span>${todoInputData}</span> <button class="deleteTodoItem">X</button>`;
+    ListItem.innerHTML = `<input type="checkbox" class="checkTodoItem"/> <span class="task">${todoInputData}</span><span class="label" style="background-color:${labelColor}">${todoLabelData}</span> <button class="deleteTodoItem">X</button>`;
     console.log(ListItem);
 
     // Add todo item to the list
@@ -32,6 +39,7 @@ document
 
     // Clear input field
     document.querySelector("#todo-input").value = "";
+    document.querySelector("#label-input").value = "";
 
     // Mark todo item as done
     ListItem.querySelector("input[type=checkbox]").addEventListener(
